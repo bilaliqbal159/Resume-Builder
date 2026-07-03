@@ -1,32 +1,37 @@
-# React + TypeScript + Vite
+# Resume Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Fill out a form, watch your resume update in real time, and export it as a
+clean PDF. No sign-up, no server — everything runs in your browser and saves
+locally as you go.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Live preview as you type
+- Two resume templates (Classic and Modern)
+- Drag-and-drop reordering for experience, education, and projects
+- Month/year date pickers
+- One-click PDF export
+- Auto-saves to your browser's local storage — no account needed
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19 + TypeScript
+- Vite
+- Tailwind CSS
+- react-to-print (PDF export)
+- @dnd-kit (drag and drop)
 
-## Expanding the Oxlint configuration
+## Running Locally
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Building for Production
+
+```bash
+npm run build
+```
+
+Outputs to `dist/`, ready to deploy anywhere that serves static files (Netlify, Vercel, etc.).
